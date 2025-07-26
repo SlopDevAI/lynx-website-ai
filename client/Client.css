@@ -1,0 +1,89 @@
+@font-face {
+  font-family: Whitney;
+  src: '../src/assets/Whitney-Font/whitney.otf' format('opentype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Whitney;
+  src: '../src/assets/Whitney-Font/whitneybold.otf' format('opentype');
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Whitney;
+  src: '../src/assets/Whitney-Font/whitneyitalic.otf' format('opentype');
+  font-style: italic;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Whitney;
+  src: '../src/assets/Whitney-Font/whitneylight.otf' format('opentype');
+  font-style: normal;
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: Whitney;
+  src: '../src/assets/Whitney-Font/whitneylightitalic.otf' format('opentype');
+  font-style: italic;
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: Whitney;
+  src: '../src/assets/Whitney-Font/whitneymedium.otf' format('opentype');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Whitney;
+  src: '../src/assets/Whitney-Font/whitneymediumitalic.otf' format('opentype');
+  font-style: italic;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Whitney;
+  src: '../src/assets/Whitney-Font/whitneysemibold.otf' format('opentype');
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Whitney;
+  src: '../src/assets/Whitney-Font/WhitneySemiboldItalic.otf' format('opentype');
+  font-style: italic;
+  font-weight: 600;
+}
+
+body {
+  margin: 0;
+  color: #fff;
+  font-family: Whitney, sans-serif;
+  background-image: linear-gradient(to bottom, #020917, #101725);
+}
+
+.content {
+  display: flex;
+  min-height: 100vh;
+  line-height: 1.1;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content h1 {
+  font-size: 3.6rem;
+  font-weight: 700;
+}
+
+.content p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  opacity: 0.5;
+}

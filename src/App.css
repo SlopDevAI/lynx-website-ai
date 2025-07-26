@@ -1,24 +1,88 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+:root {
+  background-color: #000;
+  --color-text: #fff;
+}
+
+.Background {
+  position: fixed;
+  background: linear-gradient(
+    to bottom left, /* Top right to bottom left direction */
+    #ff084e 0%,     /* Vivid scarlet */
+    #ff2b6e 15%,    /* Bright coral */
+    #ff7d4d 45%,    /* Warm orange */
+    #c86dd7 75%,    /* Soft purple */
+    #4b0082 100%    /* Deep indigo */
+  );
+  box-shadow: 
+    inset 12.93px 28.74px 28.74px rgba(128, 0, 128, 0.15), /* Purple depth */
+    inset -12.93px -28.74px 28.74px rgba(255, 69, 0, 0.1); /* Orange glow */
+  border-radius: 8px; /* Subtle rounding */
+  width: 200vw;
+  height: 200vw;
+  top: -60vw;
+  left: -14.27vw;
+  transform: rotate(15.25deg);
+  mix-blend-mode: soft-light; /* Creates natural blending */
+  opacity: 0.9;
+  z-index: 0;
+}
+
+.App {
+  position: relative;
+  min-height: 91vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.4); /* Shadow backdrop */
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
   padding: 2rem;
-  text-align: center;
+  margin: 2rem;
+  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.05); /* Soft highlight */
+}
+  
+
+text {
+  color: var(--color-text);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.Banner {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
 }
 
-@keyframes logo-spin {
+.Logo {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.Logo--react {
+  width: 300px;
+  height: 300px;
+  animation: Logo--spin infinite 20s linear;
+}
+
+.Logo--lynx {
+  width: 300px;
+  height: 300px;
+  animation: Logo--shake infinite 4s ease;
+}
+
+.Logo--rocket {
+  width: 300px;
+  height: 300px;
+  animation: Logo--flyaway infinite 4s linear;
+}
+
+@keyframes Logo--spin {
   from {
     transform: rotate(0deg);
   }
@@ -27,16 +91,67 @@
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@keyframes Logo--shake {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
-.card {
-  padding: 2em;
+@keyframes Logo--flyaway {
+  0%{
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+  99% {
+    opacity: 1;
+    transform: translateY(-70vh) translateX(20vh) rotate(30deg);
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
-.read-the-docs {
-  color: #888;
+.Content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Arrow {
+  width: 48px;
+  height: 48px;
+}
+
+.Title {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.Subtitle {
+  font-style: italic;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.Description {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 15rpx;
+}
+
+.Hint {
+  font-size: 12px;
+  margin: 5px;
+  color: rgba(255, 255, 255, 0.65);
 }

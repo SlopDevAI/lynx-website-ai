@@ -1,0 +1,8 @@
+{
+    "build": "concurrently \"npm run build:mobile\" \"npm run build:client\" \"npm run build:app\"",
+    "build:mobile": "rspeedy build -c ./config/lynx.mobile.ts",
+    "build:app": "npm run build:web && rsbuild build -c ./config/lynx.app.ts && electron-builder",
+    "dev:mobile": "rspeedy dev -c ./config/lynx.mobile.ts",
+    "dev:app": "(test -f build/web/main.web.bundle || npm run build:web) && concurrently \"nodemon --watch ./src --ext * --exec \\\"npm run build:web \\\"\" \"rsbuild build -c ./config/lynx.app.ts && electron main.js\"",
+    "preview:mobile": "npm run build:mobile && rspeedy preview -c ./config/lynx.mobile.ts"
+}
