@@ -10,7 +10,7 @@ export function homePage() {
   const [alterLogo, setAlterLogo] = useState(false);
 
   useEffect(() => {
-    console.info('Hello');
+    console.info('Hello from Lovable environment');
   }, []);
 
   const onTap = useCallback(() => {
