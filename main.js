@@ -1,12 +1,20 @@
-// Web-only version for Lovable environment
-// This removes Electron dependencies that cause bun installation issues
+// Updated main.js to use bun-compatible native compilation
+import { electronCompat } from './bun-native-compat.js';
 
-console.log('Running in web-only mode for Lovable compatibility');
+console.log('Using bun-compatible electron replacement');
 
-// In a real environment, this would be handled by the proper Electron setup
-// For now, just log that we're in development mode
-if (typeof window !== 'undefined') {
-  console.log('Web environment detected');
-} else {
-  console.log('Node environment - Electron functionality disabled for Lovable compatibility');
+// Use the bun-compatible version instead of real electron
+const { app, BrowserWindow, protocol } = electronCompat;
+
+// Simplified version that doesn't require native compilation
+console.log('Lynx-js app running in bun-compatible mode');
+
+// In development, just log the setup
+if (typeof window === 'undefined') {
+  console.log('Server environment - native functionality stubbed for bun compatibility');
+  
+  // Simulate the electron app lifecycle without native dependencies
+  app.whenReady().then(() => {
+    console.log('App ready (simulated)');
+  });
 }
