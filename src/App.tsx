@@ -57,3 +57,5 @@ export function homePage() {
     </view>
   );
 }
+
+export default homePage;
